@@ -1,0 +1,446 @@
+@use "_colors.scss" as colors;
+@use "_animations.scss" as *;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-padding-top: 72px;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.change-color {
+  color: colors.$main-color;
+  font-weight: bold;
+}
+
+.section-title {
+  color: black;
+}
+
+.shadow-bg {
+  background-color: rgb(0, 0, 0, 0.6);
+  transition: 300ms ease-in-out;
+}
+
+nav.navbar {
+  position: fixed;
+  z-index: 10;
+  width: 100vw;
+  transition: 300ms ease-in-out;
+
+  .nav-link,
+  .bi-list,
+  .navbar-brand {
+    color: colors.$white;
+  }
+
+  .nav-link {
+    text-transform: uppercase;
+  }
+
+  .navbar-nav .nav-link.active {
+    color: colors.$main-color;
+  }
+
+  .navbar-brand {
+    font-weight: bold;
+    transition: 300ms ease-in-out;
+  }
+
+  .nav-link:hover,
+  .navbar-brand:hover {
+    color: colors.$main-color;
+  }
+}
+
+header.hero-img {
+  width: 100vw;
+  position: relative;
+  background-image: url(/assets/ai-generated-8020815_1920.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  .hero-shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 0.6);
+    z-index: 0;
+  }
+
+  .hero-text {
+    color: colors.$white;
+    z-index: 1;
+
+    h1 {
+      font-size: 50px;
+    }
+
+    p {
+      font-size: 20px;
+    }
+  }
+  .chevron-holder {
+    position: absolute;
+    bottom: 60px;
+    color: white;
+  }
+
+  .bi-chevron-down {
+    font-size: 50px;
+    cursor: pointer;
+  }
+}
+
+.aboutus {
+  i {
+    font-size: 32px;
+  }
+  .aboutus-card {
+    transition: 300ms ease-in-out;
+  }
+  .aboutus-card:hover {
+    color: colors.$main-color;
+  }
+
+  .aboutus-card-title {
+    font-size: 18px;
+    text-transform: uppercase;
+  }
+
+  .aboutus-card-text {
+    font-size: 14px;
+  }
+}
+
+.underline {
+  height: 3px;
+  width: 60px;
+  margin: 0 auto 40px;
+  background-color: colors.$main-color;
+}
+
+.aboutus-more {
+  position: relative;
+  height: 100%;
+  background-image: url(/assets/keyboard-4759499_1920.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  z-index: 1;
+  i {
+    font-size: 32px;
+  }
+  .aboutus-more-shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 0.7);
+    z-index: -10;
+  }
+
+  .aboutus-more-card:hover {
+    color: colors.$main-color;
+  }
+
+  .aboutus-more-card {
+    transition: 300ms ease-in-out;
+
+    .aboutus-more-title {
+      font-size: 24px;
+    }
+  }
+}
+
+.portfolio {
+  color: white;
+
+  .carousel-item {
+    height: 500px;
+  }
+  .carousel {
+    display: none;
+  }
+  .carousel-caption {
+    right: 0;
+    left: 0;
+    z-index: 1;
+    padding-bottom: 20px;
+    .carousel-caption-shadow {
+      z-index: -1;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgb(0, 0, 0, 0.9);
+    }
+  }
+}
+
+.prices {
+  .row {
+    .option {
+      transition: 300ms ease-in-out;
+      margin: 20px;
+      padding: 30px 0;
+      text-align: center;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+        rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+      span {
+        font-weight: bold;
+      }
+      .option-underline {
+        height: 1px;
+        width: 70%;
+        margin: auto;
+        margin-bottom: 16px;
+        background-color: #c9c9c9;
+      }
+      i {
+        font-size: 24px;
+        margin-left: 5px;
+      }
+
+      .price-title {
+        text-transform: uppercase;
+        font-weight: bold;
+        color: colors.$main-color;
+      }
+    }
+    .option:hover {
+      scale: 105%;
+    }
+  }
+}
+
+.team {
+  z-index: 0;
+  position: relative;
+  background-image: url(/assets/chairs-2181960_1920.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  .bg-shadow {
+    z-index: -20;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 0.5);
+  }
+  .card-group {
+    .card {
+      transition: 300ms ease-in-out;
+      margin: 0 10px;
+      img {
+        height: 300px;
+        object-fit: cover;
+      }
+      .card-title {
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        font-weight: bold;
+      }
+
+      .card-body {
+        height: 160px;
+        text-align: center;
+      }
+      .card-footer {
+        display: flex;
+        justify-content: space-around;
+        font-size: 18px;
+        a {
+          cursor: pointer;
+          color: colors.$main-color;
+          i {
+            transition: 300ms ease-in-out;
+          }
+        }
+        a:hover {
+          i {
+            color: rgb(22, 72, 221);
+          }
+        }
+      }
+    }
+    .card:hover {
+      transform: scale(99%);
+    }
+  }
+}
+
+.opinions {
+  .opinion {
+    overflow: hidden;
+    height: fit-content;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+      rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    padding: 20px;
+    margin: 20px;
+    p {
+      margin: 0;
+      margin-top: 5px;
+    }
+    .comment {
+      margin-top: 10px;
+      font-size: 18px;
+      .quote {
+        color: rgb(207, 176, 0);
+        font-family: "Passion One", cursive;
+      }
+    }
+    .opinion-owner {
+      display: flex;
+      justify-content: space-between;
+      .author {
+        display: flex;
+        img {
+          height: 70px;
+          width: 70px;
+          object-fit: cover;
+          object-position: center;
+          border-radius: 50%;
+        }
+        .names {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          p {
+            margin: 0;
+            margin-left: 20px;
+          }
+          .nickname {
+            font-size: 18px;
+          }
+          .tag {
+            color: rgba(0, 0, 0, 0.4);
+          }
+        }
+      }
+      .stars {
+        display: flex;
+        display: none;
+        align-items: center;
+        padding-right: 30px;
+        i {
+          margin: 0 5px;
+          color: rgb(207, 176, 0);
+        }
+      }
+    }
+  }
+}
+
+.achievements {
+  .parent {
+    .achievement {
+      transition: 300ms ease-in-out;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      i {
+        font-size: 64px;
+        text-shadow: 2px 2px 5px rgb(0, 0, 0, 0.5);
+      }
+      .amount {
+        font-size: 24px;
+      }
+      .achievement-text {
+        text-transform: uppercase;
+        text-align: center;
+      }
+    }
+    .achievement:hover {
+      scale: 105%;
+    }
+  }
+}
+
+.contact {
+  position: relative;
+  background-image: url(/assets/buildings-4467663_1920.jpg);
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  z-index: 5;
+  color: white;
+  .bg-shadow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 3, 29, 0.8);
+    z-index: -20;
+  }
+  .underline {
+    background-color: white;
+  }
+  .contact-card {
+    text-align: center;
+    .title {
+      font-size: 2rem;
+      text-transform: uppercase;
+    }
+    p {
+      font-size: 20px;
+    }
+    a {
+      margin: 0 10px;
+      i {
+        transition: 300ms ease-in-out;
+        font-size: 24px;
+        color: white;
+      }
+      i:hover {
+        color: colors.$main-color;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  header.hero-img .hero-text {
+    h1 {
+      font-size: 55px;
+    }
+
+    p {
+      font-size: 25px;
+    }
+  }
+  .opinions {
+    .opinion {
+      .opinion-owner {
+        .stars {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .portfolio {
+    .carousel {
+      display: block;
+    }
+  }
+}
