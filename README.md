@@ -1,4 +1,4 @@
-### Użyte technologie
+### Used technologies
 - Html
 - Sass
 - Javascript
